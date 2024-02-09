@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.search--container:hover,.search--container:active, .search--container:focus{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+
+.search--container {
+    /* border: 1px solid green; */
+    display: flex;
+    min-width: 355px;
+    height: 200px;
+    overflow: hidden;
+    text-align: start;
+    flex-wrap: nowrap;
+
+}
+
+.search--container .cover {
+    align-self: start;
+    width: 125px;
+    margin: 10px;
+    aspect-ratio: 2/3;
+    object-fit: contain;
+}
+
+.search--content h3{
+    margin-top: 20px;
+    height: 67px;
+    overflow: hidden;
+}
+.search--content{
+    overflow-wrap: hidden;
+    word-wrap:nowrap;
+    white-space: nowrap;
+}
+
+.search--content .Button {
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif; /* временно */
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #006fff;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top:15px;
+    color: white;
+    
+}
+.search--content .Button:last-child{
+    margin-left: 15px;
+    text-decoration: none;
+
+}
+@media (max-width: 1200px) {
+    .search--container{
+        min-width: 120px;
+        height: 170px;
+    }
+    .search--container .cover{
+        width: 60px;
+        margin: 0 10px 0 0;
+    }
+    .search--content h3{
+        font-size: 16px;
+        margin:  0;
+        height: 15px;
+    }
+    .search--content p{
+        margin: 0;
+        font-size: 14px;
+    }
+}
+@media (max-width: 1000px) {
+    .search--content .Button {
+        font-size: 12px;
+    }
+    
+}
+@media (max-width: 900px) {
+    .search--content span {
+        display: flex;
+    }
+    .search--content .Button:last-child{
+        margin-left: 0;
+        text-decoration: none;
+        margin-top: 5px;
+    }
+}
+@media (max-width: 700px) {
+    .search--content span{
+        display: inline;
+        
+    }
+    .search--content .Button:last-child{
+        margin-left: 15px;
+    }
+    .search--container .cover{
+        width: 80px;
+        margin: 0 10px 0 0;
+    }
+}
