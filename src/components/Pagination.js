@@ -6,7 +6,7 @@ import "./pagination.css"
 
 export default function Pagination(props) {
 
-
+    //pagination numbers function
     const pageNum = []
     for (let i = 1; i <= Math.ceil(props.objects / props.objectsPerPage); i++) {
         pageNum.push(i)

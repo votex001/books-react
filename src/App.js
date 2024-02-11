@@ -12,11 +12,14 @@ import img from "./components/catbook.svg"
 
 export default function App() {
 
-    const [page, setPage] = useState(true)
-    const [search, setSearch] = useState("")
-    const [pageCount, setPageCount] = useState(0)
-    const [currentPage, setCurrentPage] = useState(1)
-    const objectsPerPage = 9
+    const [page, setPage] = useState(true) // changing to watchlist page
+    const [search, setSearch] = useState("")  //searching value
+    const [pageCount, setPageCount] = useState(0)  //pagination counting
+    const [currentPage, setCurrentPage] = useState(1)  // changing page
+
+
+    //all about pagination settings
+    const objectsPerPage = 9 
     const lastObjectIndex = currentPage * objectsPerPage
     const firstObjectIndex = lastObjectIndex - objectsPerPage
     const newPage = (n) => { setCurrentPage(x => x = n) }
@@ -27,7 +30,10 @@ export default function App() {
         }
     }
 
+    
+
     if (page) {
+        // main page
         return (
             <>
                 <Header
@@ -59,6 +65,7 @@ export default function App() {
         )
     }
     else {
+        // the watchlist
         return (
             <>
                 <Header

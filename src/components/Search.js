@@ -25,7 +25,7 @@ export default function Search(props) {
         LS.setItem('data', JSON.stringify(res))
     }
 
-
+// grabs search value and put in fetch
     useEffect(() =>{
         setLoading(prev => prev = false)
         fetch(`https://gutendex.com/books/?search=${props.search}`)
@@ -42,6 +42,9 @@ export default function Search(props) {
     )
 
     if (error) { return <p>Error {error.message}</p> } //is have erros
+
+
+    //loaging
     else if (!isLoaded) {
         return <h3 style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}>
             <img className="loading" src={img} alt="cat loading page">
@@ -51,7 +54,7 @@ export default function Search(props) {
     else {
 
 
-        // console.log(items)
+        //takes "items" after fetch and maps them
         return (
             props.pagination(items.length),
             items?.slice(props.firstObjectIndex, props.lastObjectIndex).map(x => {
